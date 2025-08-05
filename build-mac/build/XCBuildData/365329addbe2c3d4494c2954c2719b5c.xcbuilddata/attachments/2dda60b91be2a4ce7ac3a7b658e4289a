@@ -1,0 +1,19 @@
+#!/bin/sh
+set -e
+if test "$CONFIGURATION" = "Debug"; then :
+  cd /Users/bhavin.gupta/Documents/axmol_project/project2/Connect4Game/build-mac/engine/axmol/core
+  /Users/bhavin.gupta/Documents/axmol_setup/axmol/tools/external/axslcc/axslcc --silent --err-format=msvc --lang=msl --automap --no-suffix "--defines=METAL" --include-dirs=/Users/bhavin.gupta/Documents/axmol_setup/axmol/core/renderer/shaders --sgs --reflect --frag=/Users/bhavin.gupta/Documents/axmol_setup/axmol/core/renderer/shaders/positionTextureColor.frag --output=/Users/bhavin.gupta/Documents/axmol_project/project2/Connect4Game/build-mac/runtime/axslc/positionTextureColor_fs
+fi
+if test "$CONFIGURATION" = "Release"; then :
+  cd /Users/bhavin.gupta/Documents/axmol_project/project2/Connect4Game/build-mac/engine/axmol/core
+  /Users/bhavin.gupta/Documents/axmol_setup/axmol/tools/external/axslcc/axslcc --silent --err-format=msvc --lang=msl --automap --no-suffix "--defines=METAL" --include-dirs=/Users/bhavin.gupta/Documents/axmol_setup/axmol/core/renderer/shaders --sgs --reflect --frag=/Users/bhavin.gupta/Documents/axmol_setup/axmol/core/renderer/shaders/positionTextureColor.frag --output=/Users/bhavin.gupta/Documents/axmol_project/project2/Connect4Game/build-mac/runtime/axslc/positionTextureColor_fs
+fi
+if test "$CONFIGURATION" = "MinSizeRel"; then :
+  cd /Users/bhavin.gupta/Documents/axmol_project/project2/Connect4Game/build-mac/engine/axmol/core
+  /Users/bhavin.gupta/Documents/axmol_setup/axmol/tools/external/axslcc/axslcc --silent --err-format=msvc --lang=msl --automap --no-suffix "--defines=METAL" --include-dirs=/Users/bhavin.gupta/Documents/axmol_setup/axmol/core/renderer/shaders --sgs --reflect --frag=/Users/bhavin.gupta/Documents/axmol_setup/axmol/core/renderer/shaders/positionTextureColor.frag --output=/Users/bhavin.gupta/Documents/axmol_project/project2/Connect4Game/build-mac/runtime/axslc/positionTextureColor_fs
+fi
+if test "$CONFIGURATION" = "RelWithDebInfo"; then :
+  cd /Users/bhavin.gupta/Documents/axmol_project/project2/Connect4Game/build-mac/engine/axmol/core
+  /Users/bhavin.gupta/Documents/axmol_setup/axmol/tools/external/axslcc/axslcc --silent --err-format=msvc --lang=msl --automap --no-suffix "--defines=METAL" --include-dirs=/Users/bhavin.gupta/Documents/axmol_setup/axmol/core/renderer/shaders --sgs --reflect --frag=/Users/bhavin.gupta/Documents/axmol_setup/axmol/core/renderer/shaders/positionTextureColor.frag --output=/Users/bhavin.gupta/Documents/axmol_project/project2/Connect4Game/build-mac/runtime/axslc/positionTextureColor_fs
+fi
+
