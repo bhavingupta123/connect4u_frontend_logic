@@ -50,6 +50,7 @@ bool OnlineScene::init() {
 }
 
 void OnlineScene::showGameOverOptions() {
+    _rematchAccepted = false;
     auto visibleSize = _director->getVisibleSize();
     Vec2 origin = _director->getVisibleOrigin();
 
