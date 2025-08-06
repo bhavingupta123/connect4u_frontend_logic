@@ -94,10 +94,37 @@ void OnlineGameController::handleServerMessage(const std::string& msg) {
             _onGameOverCallback();
         }
     }
+    else if (type == "rematch_offer") {
+        if (_onRematchOffer) {
+            _onRematchOffer();
+        }
+    }
+    else if (type == "rematch_declined") {
+        if (_onRematchDeclined) {
+            _onRematchDeclined();
+        }
+    }
+    else if (type == "rematch_start") {
+        if (_onRematchAccepted) {
+                _onRematchAccepted();
+        }
+    }
+
+}
+
+void OnlineGameController::setOnRematchAcceptedCallback(std::function<void()> callback) {
+    _onRematchAccepted = std::move(callback);
 }
 
 void OnlineGameController::updateStatus(const std::string& text) {
     if (_statusLabel) {
         _statusLabel->setString(text);
     }
+}
+
+void OnlineGameController::resetState() {
+    _isMyTurn = (_playerId == 0);
+    _gameOver = false;
+    _view->enableInput(_isMyTurn);
+    updateStatus(_isMyTurn ? "Your turn" : "Opponent's turn");
 }

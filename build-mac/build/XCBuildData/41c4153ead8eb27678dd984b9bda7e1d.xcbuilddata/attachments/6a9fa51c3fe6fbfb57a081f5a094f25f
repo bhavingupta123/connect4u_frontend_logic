@@ -1,0 +1,19 @@
+#!/bin/sh
+set -e
+if test "$CONFIGURATION" = "Debug"; then :
+  cd /Users/bhavin.gupta/Documents/axmol_project/project2/Connect4Game/build-mac
+  echo Build\ all\ projects
+fi
+if test "$CONFIGURATION" = "Release"; then :
+  cd /Users/bhavin.gupta/Documents/axmol_project/project2/Connect4Game/build-mac
+  echo Build\ all\ projects
+fi
+if test "$CONFIGURATION" = "MinSizeRel"; then :
+  cd /Users/bhavin.gupta/Documents/axmol_project/project2/Connect4Game/build-mac
+  echo Build\ all\ projects
+fi
+if test "$CONFIGURATION" = "RelWithDebInfo"; then :
+  cd /Users/bhavin.gupta/Documents/axmol_project/project2/Connect4Game/build-mac
+  echo Build\ all\ projects
+fi
+

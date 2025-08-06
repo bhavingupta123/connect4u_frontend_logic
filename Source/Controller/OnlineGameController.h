@@ -19,12 +19,20 @@ public:
               NetworkController* network,
               ax::Label* statusLabel,
               const std::function<void()>& onGameOver);
+    void setOnRematchOfferCallback(std::function<void()> callback) { _onRematchOffer = callback; }
+    void setOnRematchDeclinedCallback(std::function<void()> callback) { _onRematchDeclined = callback; }
+    void setOnRematchAcceptedCallback(std::function<void()> callback);
+    void resetState();
 
 private:
     void handleServerMessage(const std::string& msg);
     void sendMove(int col);
     void onTouchColumn(int col);
     void updateStatus(const std::string& text);
+    
+    std::function<void()> _onRematchOffer;
+    std::function<void()> _onRematchDeclined;
+    std::function<void()> _onRematchAccepted;
 
     BoardModel* _model;
     BoardView* _view;

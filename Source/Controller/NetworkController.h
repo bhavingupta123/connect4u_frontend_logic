@@ -14,6 +14,7 @@ public:
     void sendMove(int column);
     void sendRematchRequest();
     void sendRematchCancel();
+    void close();
 
     void setOnMessageCallback(std::function<void(const std::string&)> callback);
 

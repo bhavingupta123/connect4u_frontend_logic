@@ -15,7 +15,6 @@ public:
     bool isFull() const;
     int getRows() const;
     int getCols() const;
-
 private:
     int _cols, _rows;
     std::vector<std::vector<int>> _grid;

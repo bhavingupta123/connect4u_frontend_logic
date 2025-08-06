@@ -131,3 +131,12 @@ ax::Vec2 BoardView::getCellPosition(int col, int row) const {
     }
     return Vec2::ZERO;
 }
+
+void BoardView::reset() {
+    this->removeAllChildren();
+    this->init(_cols, _rows);
+    
+    if (_onColumnTapped) {
+        setupTouch(_onColumnTapped);
+    }
+}

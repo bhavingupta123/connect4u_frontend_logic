@@ -16,6 +16,7 @@ public:
     void setupTouch(std::function<void(int)> callback);
     ax::Vec2 getCellPosition(int col, int row) const;
     void enableInput(bool enable);
+    void reset();
 
 private:
     int _cols, _rows;

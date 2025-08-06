@@ -19,7 +19,6 @@ NetworkController* NetworkController::create(const std::string& url) {
 
 bool NetworkController::init(const std::string& url) {
     _ws = new WebSocket();
-    
     if (!_ws)
         return false;
 
@@ -49,14 +48,22 @@ void NetworkController::sendRematchCancel() {
     _ws->send(R"({"type":"rematch_cancelled"})");
 }
 
+void NetworkController::sendRaw(const std::string& message) {
+    if (_ws) _ws->send(message);
+}
+
 void NetworkController::setOnMessageCallback(std::function<void(const std::string&)> callback) {
     _onMessage = std::move(callback);
+}
+
+void NetworkController::setOnOpenCallback(std::function<void()> callback) {
+    _onOpen = std::move(callback);
 }
 
 // WebSocket Delegate Callbacks
 void NetworkController::onOpen(WebSocket* ws) {
     AXLOG("WebSocket connected");
-    if (_onOpen) _onOpen(); 
+    if (_onOpen) _onOpen();
 }
 
 void NetworkController::onMessage(WebSocket* ws, const WebSocket::Data& data) {
@@ -73,10 +80,11 @@ void NetworkController::onError(WebSocket* ws, const WebSocket::ErrorCode& error
     AXLOG("WebSocket error occurred: %d", static_cast<int>(error));
 }
 
-void NetworkController::sendRaw(const std::string& message) {
-    if (_ws) _ws->send(message);
-}
-
-void NetworkController::setOnOpenCallback(std::function<void()> callback) {
-    _onOpen = std::move(callback);
+void NetworkController::close() {
+    if (_ws) {
+        AXLOG("here2");
+        _ws->close();
+        delete _ws;
+        _ws = nullptr;
+    }
 }

@@ -1,23 +1,37 @@
 #pragma once
 
 #include "axmol.h"
-#include "View/BoardView.h"
+#include <functional>
+
+class BoardModel;
+class BoardView;
+class NetworkController;
+class OnlineGameController;
 
 class OnlineScene : public ax::Scene {
 public:
     static OnlineScene* createScene();
-    virtual bool init();
+    virtual bool init() override;
 
     CREATE_FUNC(OnlineScene);
 
 private:
-    ax::Label* _statusLabel;
-    ax::MenuItemLabel* _rematchButton;
-    ax::MenuItemLabel* _homeButton;
-    ax::Menu* _gameOverMenu;
-
     void showGameOverOptions();
-    void showRematchOfferPopup();
     void hideGameOverOptions();
-    void handleServerMessage(const std::string& msg);
+    void showRematchOfferPopup();
+    void hideRematchPopup();
+    void showRematchDeclinedPopup();
+    void resetBoardForRematch();
+
+    BoardModel* _model = nullptr;
+    BoardView* _view = nullptr;
+    NetworkController* network = nullptr;
+    OnlineGameController* _controller = nullptr;
+
+    ax::Label* _statusLabel = nullptr;
+    ax::MenuItemLabel* _rematchButton = nullptr;
+    ax::MenuItemLabel* _homeButton = nullptr;
+    ax::Menu* _rematchPopup = nullptr;
+    
+    bool _rematchAccepted = false;
 };

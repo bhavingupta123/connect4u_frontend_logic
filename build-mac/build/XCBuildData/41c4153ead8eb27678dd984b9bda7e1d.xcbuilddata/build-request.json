@@ -1,0 +1,197 @@
+{
+  "buildCommand" : {
+    "command" : "prepareForIndexing",
+    "enableIndexBuildArena" : false,
+    "targets" : null
+  },
+  "configuredTargets" : [
+    {
+      "guid" : "1fe995120c68f4042f28a66614dbebadc171bbd55af053fdea283b1a913e4d1d"
+    },
+    {
+      "guid" : "1fe995120c68f4042f28a66614dbebad99046bed1e39bc649a8ef04cc6f6b1b6"
+    },
+    {
+      "guid" : "1fe995120c68f4042f28a66614dbebad8cfbaf921b6b6bff1a102c95cfa37f07"
+    },
+    {
+      "guid" : "1fe995120c68f4042f28a66614dbebada31f0dfd3d700b856ce0974812a3afe0"
+    },
+    {
+      "guid" : "1fe995120c68f4042f28a66614dbebad9590cafd51a1b00f6b1da2aa2838f520"
+    },
+    {
+      "guid" : "1fe995120c68f4042f28a66614dbebadc6a668b286bb758923d44559cb4303da"
+    },
+    {
+      "guid" : "1fe995120c68f4042f28a66614dbebad39539f725f29b791eb7d4416fbb0413f"
+    },
+    {
+      "guid" : "1fe995120c68f4042f28a66614dbebadadff2d1bee9f599570a51183a6b2202f"
+    },
+    {
+      "guid" : "1fe995120c68f4042f28a66614dbebadfb5f4756907cce22de3e13fab6ce1b23"
+    },
+    {
+      "guid" : "1fe995120c68f4042f28a66614dbebadce5a61e604928f87e0db0aa1d13cf371"
+    },
+    {
+      "guid" : "1fe995120c68f4042f28a66614dbebadc7d6124bfdc25b746e5c48c792919cfc"
+    },
+    {
+      "guid" : "1fe995120c68f4042f28a66614dbebad7c06769b3c24213facb3208657c4eb05"
+    },
+    {
+      "guid" : "1fe995120c68f4042f28a66614dbebad4a50d165fce5f7ff187f4d07a30a242b"
+    },
+    {
+      "guid" : "1fe995120c68f4042f28a66614dbebad4fb6261b01f04ff680a93c00319954df"
+    },
+    {
+      "guid" : "1fe995120c68f4042f28a66614dbebad00f0f34f75dbc868a3a6cf43604e0662"
+    },
+    {
+      "guid" : "1fe995120c68f4042f28a66614dbebad8b283d8e379e769678a4898904e865df"
+    },
+    {
+      "guid" : "1fe995120c68f4042f28a66614dbebad862775b16663d0818d75726ef717eb10"
+    },
+    {
+      "guid" : "1fe995120c68f4042f28a66614dbebad223ac43aea1faf3843152215e477aaf6"
+    },
+    {
+      "guid" : "1fe995120c68f4042f28a66614dbebad258cd80ed0bd748ec2c35c5e4cbe7a12"
+    },
+    {
+      "guid" : "1fe995120c68f4042f28a66614dbebadddad3fbd1fe45c9d1ca8c46f3ebf1758"
+    },
+    {
+      "guid" : "1fe995120c68f4042f28a66614dbebada91db809dcc9d2bbf072cb065283024a"
+    },
+    {
+      "guid" : "1fe995120c68f4042f28a66614dbebadd2e8bded3f5a2cc72e888039c9f60d7b"
+    },
+    {
+      "guid" : "1fe995120c68f4042f28a66614dbebad6e687355fad120dd9fd4f62a79b20da4"
+    },
+    {
+      "guid" : "1fe995120c68f4042f28a66614dbebad4707d6a2aae5f68ffd7fdf0f8f9a8ac5"
+    },
+    {
+      "guid" : "1fe995120c68f4042f28a66614dbebada2a8c4e89ace21f773329492efd5bf5e"
+    },
+    {
+      "guid" : "1fe995120c68f4042f28a66614dbebad9fe22f29c103f91f49479cd125b65a17"
+    },
+    {
+      "guid" : "1fe995120c68f4042f28a66614dbebad26451d2ba179add54e6dc60cbc4c2f38"
+    },
+    {
+      "guid" : "1fe995120c68f4042f28a66614dbebad1539a966d33eacd27cfe087877d3ae5d"
+    },
+    {
+      "guid" : "1fe995120c68f4042f28a66614dbebad2a61f3e02f3857e16142237a1f579ce4"
+    },
+    {
+      "guid" : "1fe995120c68f4042f28a66614dbebadbf54b000551d02a27da00fae80407be9"
+    },
+    {
+      "guid" : "1fe995120c68f4042f28a66614dbebad8fae552883109b654578ff1d6350ef23"
+    },
+    {
+      "guid" : "1fe995120c68f4042f28a66614dbebad35b5c715d9c7f0d09bb37da9da1c50d3"
+    },
+    {
+      "guid" : "1fe995120c68f4042f28a66614dbebad190a88fb8b49416401f65be6fdb793b4"
+    },
+    {
+      "guid" : "1fe995120c68f4042f28a66614dbebadd7d3a5861126ff474391d819d41b3eb7"
+    },
+    {
+      "guid" : "1fe995120c68f4042f28a66614dbebad15042027fea19e2bcc2f8e6467000e15"
+    },
+    {
+      "guid" : "1fe995120c68f4042f28a66614dbebad3510e9c60d4f96fda6dc55deb2f85086"
+    },
+    {
+      "guid" : "1fe995120c68f4042f28a66614dbebadb0bbe986124485d119aa0835a10c803c"
+    },
+    {
+      "guid" : "1fe995120c68f4042f28a66614dbebadf298315bc618dd77890c0d6b71478dcb"
+    },
+    {
+      "guid" : "1fe995120c68f4042f28a66614dbebad5c0d19f14ddee65f5aff4fc0c420ad50"
+    },
+    {
+      "guid" : "1fe995120c68f4042f28a66614dbebadbbf070bc5cae76aa5cb7d2b610a9ef7b"
+    },
+    {
+      "guid" : "1fe995120c68f4042f28a66614dbebadfbd36d8824b2607a570e0a4dc86d81a7"
+    },
+    {
+      "guid" : "1fe995120c68f4042f28a66614dbebadf1800fd2068bc1704b66dc85a813c582"
+    },
+    {
+      "guid" : "1fe995120c68f4042f28a66614dbebad8a636de766c35cbfd282b7c40fbbbd64"
+    },
+    {
+      "guid" : "1fe995120c68f4042f28a66614dbebad92fefad65ccf454e82097443fa1c40a4"
+    },
+    {
+      "guid" : "1fe995120c68f4042f28a66614dbebadb9e07739de64ae145c035eb86779b4c3"
+    },
+    {
+      "guid" : "1fe995120c68f4042f28a66614dbebad46397f396a882716b5325d1aee23c54f"
+    },
+    {
+      "guid" : "1fe995120c68f4042f28a66614dbebada7a5c0dc478f99328a777c13f9e91793"
+    }
+  ],
+  "containerPath" : "/Users/bhavin.gupta/Documents/axmol_project/project2/Connect4Game/build-mac/Connect4Game.xcodeproj",
+  "continueBuildingAfterErrors" : true,
+  "dependencyScope" : "workspace",
+  "enableIndexBuildArena" : false,
+  "hideShellScriptEnvironment" : false,
+  "parameters" : {
+    "action" : "build",
+    "activeArchitecture" : "arm64",
+    "activeRunDestination" : {
+      "disableOnlyActiveArch" : false,
+      "platform" : "macosx",
+      "sdk" : "macosx15.5",
+      "sdkVariant" : "macos",
+      "supportedArchitectures" : [
+        "arm64e",
+        "arm64",
+        "x86_64"
+      ],
+      "targetArchitecture" : "arm64"
+    },
+    "arenaInfo" : {
+      "buildIntermediatesPath" : "",
+      "buildProductsPath" : "",
+      "derivedDataPath" : "/Users/bhavin.gupta/Library/Developer/Xcode/DerivedData",
+      "indexDataStoreFolderPath" : "/Users/bhavin.gupta/Library/Developer/Xcode/DerivedData/Connect4Game-gjqljvciwxpzhjbacgaxomrdnuzk/Index.noindex/DataStore",
+      "indexEnableDataStore" : true,
+      "indexPCHPath" : "/Users/bhavin.gupta/Library/Developer/Xcode/DerivedData/Connect4Game-gjqljvciwxpzhjbacgaxomrdnuzk/Index.noindex/PrecompiledHeaders",
+      "pchPath" : ""
+    },
+    "configurationName" : "Debug",
+    "overrides" : {
+      "synthesized" : {
+        "table" : {
+          "ENABLE_PREVIEWS" : "NO",
+          "ENABLE_XOJIT_PREVIEWS" : "NO",
+          "ONLY_ACTIVE_ARCH" : "YES"
+        }
+      }
+    }
+  },
+  "qos" : "default",
+  "schemeCommand" : "launch",
+  "showNonLoggedProgress" : true,
+  "useDryRun" : true,
+  "useImplicitDependencies" : true,
+  "useLegacyBuildLocations" : false,
+  "useParallelTargets" : true
+}
