@@ -8,6 +8,7 @@ class FirstScene : public ax::Scene {
 public:
     static FirstScene* createScene();
     virtual bool init();
+    void promptForNameThenStartOnline();
 
     CREATE_FUNC(FirstScene);
 };

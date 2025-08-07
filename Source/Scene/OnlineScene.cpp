@@ -134,3 +134,4 @@ void OnlineScene::resetBoardForRematch() {
     _view->reset();
     _controller->resetState();
 }
+

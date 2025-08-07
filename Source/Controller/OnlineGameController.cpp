@@ -1,5 +1,6 @@
 #include "Controller/OnlineGameController.h"
 #include "rapidjson/document.h"
+#include "utils/GameData.h"
 
 using namespace rapidjson;
 
@@ -34,7 +35,8 @@ bool OnlineGameController::init(BoardModel* model, BoardView* view,
     });
 
     _network->setOnOpenCallback([this]() {
-        _network->sendRaw(R"({"mode":"online"})");
+        std::string name = gameData.playerName;
+        _network->sendRaw(R"({"mode":"online","name":")" + name + R"("})");
     });
 
     return true;
