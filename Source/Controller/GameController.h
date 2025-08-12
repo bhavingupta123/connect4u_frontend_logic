@@ -1,4 +1,3 @@
-
 #ifndef __GAME_CONTROLLER_H__
 #define __GAME_CONTROLLER_H__
 
@@ -11,14 +10,16 @@ public:
     GameController(BoardModel* model, BoardView* view);
     void startGame();
     void handleMove(int col);
-
     void setOnGameOverCallback(std::function<void(int)> callback);
+    void setOnTurnChangedCallback(std::function<void(int)> callback);
 
 private:
     BoardModel* _model;
     BoardView* _view;
     int _currentPlayer;
     std::function<void(int)> _onGameOver;
+    bool _gameOver = false;
+    std::function<void(int)> _onTurnChanged;
 
     void switchPlayer();
 };

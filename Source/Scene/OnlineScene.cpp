@@ -17,7 +17,7 @@ bool OnlineScene::init() {
     auto visibleSize = _director->getVisibleSize();
     Vec2 origin = _director->getVisibleOrigin();
 
-    _statusLabel = Label::createWithSystemFont("Connected", "Arial", 24);
+    _statusLabel = Label::createWithSystemFont("Matching ...", "Arial", 24);
     _statusLabel->setPosition(Vec2(origin.x + visibleSize.width / 2, origin.y + visibleSize.height - 50));
     this->addChild(_statusLabel);
 

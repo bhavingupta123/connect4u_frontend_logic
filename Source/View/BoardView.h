@@ -17,6 +17,7 @@ public:
     ax::Vec2 getCellPosition(int col, int row) const;
     void enableInput(bool enable);
     void reset();
+    void highlightWinningCells(const std::vector<std::pair<int, int>>& cells);
 
 private:
     int _cols, _rows;
@@ -24,6 +25,8 @@ private:
     ax::Sprite* _board;
     bool _inputEnabled = true;
     std::function<void(int)> _onColumnTapped;
+    ax::Node* _discNodes[10][10]{};
+    ax::Node* getDiscAt(int col, int row) const;
 
     int getColumnFromPosition(const ax::Vec2& pos) const;
 };

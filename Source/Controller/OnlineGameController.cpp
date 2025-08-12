@@ -16,7 +16,8 @@ OnlineGameController* OnlineGameController::create(BoardModel* model, BoardView*
     return nullptr;
 }
 
-bool OnlineGameController::init(BoardModel* model, BoardView* view,
+bool OnlineGameController::init(BoardModel* model,
+                                BoardView* view,
                                 NetworkController* network,
                                 ax::Label* statusLabel,
                                 const std::function<void()>& onGameOver) {
@@ -55,7 +56,8 @@ void OnlineGameController::handleServerMessage(const std::string& msg) {
     Document d;
     d.Parse(msg.c_str());
 
-    if (!d.HasMember("type") || !d["type"].IsString()) return;
+    if (!d.HasMember("type") || !d["type"].IsString())
+        return;
     std::string type = d["type"].GetString();
 
     if (type == "match_found" || type == "bot_mode") {
@@ -87,10 +89,26 @@ void OnlineGameController::handleServerMessage(const std::string& msg) {
         int winner = d["winner"].GetInt();
         _view->enableInput(false);
         std::string result;
-        if (winner == _playerId) result = "You win!";
-        else if (winner == 1 - _playerId) result = "You lose!";
-        else result = "Draw!";
+        if (winner == _playerId)
+            result = "You win!";
+        else if (winner == 1 - _playerId)
+            result = "You lose!";
+        else
+            result = "Draw!";
+        
         updateStatus("Game Over - " + result);
+        
+        if (d.HasMember("winning_cells") && d["winning_cells"].IsArray()) {
+                std::vector<std::pair<int, int>> winningCells;
+                for (auto& cell : d["winning_cells"].GetArray()) {
+                    if (cell.IsArray() && cell.Size() == 2) {
+                        int col = cell[0].GetInt();
+                        int row = cell[1].GetInt();
+                        winningCells.emplace_back(col, row);
+                    }
+                }
+                _view->highlightWinningCells(winningCells);
+            }
         
         if (_onGameOverCallback) {
             _onGameOverCallback();

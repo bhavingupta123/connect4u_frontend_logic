@@ -67,6 +67,7 @@ void BoardView::drawDisc(int col, int row, int player) {
     disc->drawSolidCircle(Vec2::ZERO, 25, 0, 30, (player == 1) ? Color4F::RED : Color4F::BLUE);
     disc->setPosition(_gridPositions[col][row] + Vec2(0, 300));
     this->addChild(disc, 3);
+    _discNodes[col][row] = disc;
 
     auto drop = MoveTo::create(0.3f, _gridPositions[col][row]);
     disc->runAction(drop);
@@ -74,23 +75,25 @@ void BoardView::drawDisc(int col, int row, int player) {
 
 void BoardView::highlightWinCells(const std::vector<Vec2>& positions) {
     for (auto pos : positions) {
-        for (auto child : this->getChildren()) {
-            if (child->getPosition().fuzzyEquals(pos, 1.0f)) {
-                auto fade = Sequence::create(
-                    FadeTo::create(0.3f, 100),
-                    FadeTo::create(0.3f, 255),
-                    nullptr
-                );
-                child->runAction(Repeat::create(fade, 2));
-                break;
-            }
-        }
+        auto highlight = DrawNode::create();
+        float radius = 25;
+        highlight->drawCircle(Vec2::ZERO, radius, 0, 30, false, Color4F::YELLOW);
+        highlight->setPosition(pos);
+        this->addChild(highlight, 10);
+
+        auto fade = Sequence::create(
+            FadeTo::create(0.3f, 100),
+            FadeTo::create(0.3f, 255),
+            nullptr
+        );
+        highlight->runAction(Repeat::create(fade, 5));
     }
 }
 
 void BoardView::clearDiscs() {
     this->removeAllChildrenWithCleanup(true);
     this->addChild(_board, 1);
+    memset(_discNodes, 0, sizeof(_discNodes));
 }
 
 void BoardView::setupTouch(std::function<void(int)> callback) {
@@ -134,9 +137,40 @@ ax::Vec2 BoardView::getCellPosition(int col, int row) const {
 
 void BoardView::reset() {
     this->removeAllChildren();
+    memset(_discNodes, 0, sizeof(_discNodes));
     this->init(_cols, _rows);
     
     if (_onColumnTapped) {
         setupTouch(_onColumnTapped);
     }
+}
+
+void BoardView::highlightWinningCells(const std::vector<std::pair<int, int>>& cells) {
+    for (const auto& cell : cells) {
+        int col = cell.first;
+        int row = cell.second;
+        AXLOG("highlighting col=%d row=%d", col, row);
+
+        auto highlight = DrawNode::create();
+        float radius = 25;
+        highlight->drawCircle(Vec2::ZERO, radius, 0, 30, false, Color4F::YELLOW);
+        highlight->setPosition(_gridPositions[col][row]);
+        this->addChild(highlight, 10);
+
+        auto fade = Sequence::create(
+            FadeTo::create(0.3f, 100),
+            FadeTo::create(0.3f, 255),
+            nullptr
+        );
+        highlight->runAction(Repeat::create(fade, 4));
+    }
+}
+
+
+
+ax::Node* BoardView::getDiscAt(int col, int row) const {
+    if (col >= 0 && col < _cols && row >= 0 && row < _rows) {
+        return _discNodes[col][row];
+    }
+    return nullptr;
 }

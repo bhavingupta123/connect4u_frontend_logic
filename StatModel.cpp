@@ -1,6 +1,7 @@
 #include "StatModel.h"
 #include "rapidjson/document.h"
 #include "MatchResult.h"
+#include "axmol.h"
 
 using namespace rapidjson;
 
@@ -9,18 +10,17 @@ std::vector<MatchResult> StatModel::parseFromJson(const std::string& json) {
     Document doc;
     doc.Parse(json.c_str());
 
-    if (!doc.IsArray()) return results;
-
-    for (const auto& val : doc.GetArray()) {
-        MatchResult r;
-        if (val.HasMember("player_name") && val["player_name"].IsString())
-            r.player = val["player_name"].GetString();
-        if (val.HasMember("opponent_name") && val["opponent_name"].IsString())
-            r.opponent = val["opponent_name"].GetString();
-        if (val.HasMember("result") && val["result"].IsString())
-            r.result = val["result"].GetString();
-
-        results.push_back(r);
+    if (doc.IsObject() && doc.HasMember("results") && doc["results"].IsArray()) {
+        for (auto& entry : doc["results"].GetArray()) {
+            if (entry.HasMember("Result") && entry.HasMember("Opponent")) {
+                MatchResult r;
+                r.result = entry["Result"].GetString();
+                r.opponent = entry["Opponent"].GetString();
+                results.push_back(r);
+            }
+        }
+    } else {
+        AXLOG("Stats JSON format unexpected or empty.");
     }
 
     return results;

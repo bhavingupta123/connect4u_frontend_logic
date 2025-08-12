@@ -11,6 +11,9 @@ public:
     void promptForNameThenStartOnline();
 
     CREATE_FUNC(FirstScene);
+
+private:
+    void promptForNameThenShowStats();
 };
 
 #endif // __FIRST_SCENE_H__

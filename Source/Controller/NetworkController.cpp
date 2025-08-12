@@ -82,7 +82,6 @@ void NetworkController::onError(WebSocket* ws, const WebSocket::ErrorCode& error
 
 void NetworkController::close() {
     if (_ws) {
-        AXLOG("here2");
         _ws->close();
         delete _ws;
         _ws = nullptr;
